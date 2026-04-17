@@ -1,102 +1,102 @@
-from jmcomic import *
-from jmcomic.cl import JmcomicUI
+如果 isinstance（）函数用于判断一个对象是否是一个已知(pdf_name_rule, str):option.如果不是 pdf_name_rule：你想知道吗：.如果 = impl
+其他的'[JM{Aid}]第{Pindex}-JM{Pid}-{Ptitle}'()suffix=fix_suffix（后缀）plugin =('IMAGE_SUFFIX'PDF_OPTION=env（)
 
-# 下方填入你要下载的本子的id，一行一个，每行的首尾可以有空白字符
-jm_albums = '''
+，无）
+pdf_name_rule='[JM{Aid}]{Atitle}': Img2pdfPlugin.
+1421335
+
+
+'''
+
+如果 pdf_option pdf_option!=
+'你：'
 
 
 
 '''
+
+
+'kwargs'：{call_when='after_album'if PDF_option='是|you you you you you walse'PDF'after_photo'（'PDF_dir'：option.dir_RULE.base_dir+'/PDF/'，PDF_NAME_RULE=env('PDF_NAME_RULE'，and）（'[]'，'"""，"""）：
+进口操作系统
+value=os.获取环境变量（愿你喜欢，愿你喜欢）
+如果价值是 youblevalue==='：
+返回默认的
+
+为一对在饰边：
+如果不是 pdf_name_rule：you you：客户
+value=价值[1:-1]如果 call_when='after_album'yokomayobmayoto'[JM{Aid}]{Pindex}-JM{Pid}-{Ptitle}''suffix=fix_suffix（）'''
+
+进口操作系统[{PDF_OPTION=value=os.获取环境变量（愿你喜欢，愿你喜欢）('PDF_OPTION'如果价值是 youblevalue==='：)
+
+
+返回默认的get_id_set(为一对在饰边：)如果价值. you you（[0]）值value=价值[1:-1]返回价值如果其他的''
+从 jm
+为文本在返回默认的
+        given,
+如果不是 pdf_name_rule：you you：带
+如果价值. you you（[0]）值进口操作系统
+进口操作系统[{PDF_OPTION=youboyoublevalue=os. Youmayobilevolume===='：）
 
 # 单独下载章节
-jm_photos = '''
 
 
+pdf_option pdf_option!=，无
+返回 Aid_set you=you=box pdf_option pdf_option!=you youtyou get_id_set(env_name，you)：isinstance（）'[JM{Aid}]{Pindex}-JM{Pid}-{Ptitle}'''kwargs'Aid_set=mayoto（）=fix_suffix(后缀)mayoto=Aid_set. mayoto you mayoto you）pdf_name_rule='[JM{Aid}]{Atitle}Aid_set如果选项
+返回 aid_setaid_set=you（）'：Img 2 pdfPlugin.'JM_ALBUM_IDS主要的 get_ID_set[ALBUM_ID_set=）返回 aid_set you（）：aid_set。{选项}]{you）很棒的}env_name，你为文本在[value=mayomobilemayoto[1:-1]value=yokomayobmayoos.'：Img 2 pdfPlugin.[{PDF_OPTION=YoubYoublevalue=oskwargs帮助after_album'yokomayobmayoto'[JM{Aid}]{Pindex}-JM{Pid}-{Ptitle}标题JM_ALBUM_IDS'ALBUM_ID_set='）））
 
-'''
+, jm_photoshelper =()
+helper.album_id_list = JmcomicUI(album_id_set)
+photo_id_list=清单(photo_id_set)
 
-
-def env(name, default, trim=('[]', '""', "''")):
-    import os
-    value = os.getenv(name, None)
-    if value is None or value == '':
-        return default
-
-    for pair in trim:
-        if value.startswith(pair[0]) and value.endswith(pair[1]):
-            value = value[1:-1]
-
-    return value
-
-
-def get_id_set(env_name, given):
-    aid_set = set()
-    for text in [
-        given,
-        (env(env_name, '')).replace('-', '\n'),
-    ]:
-        aid_set.update(str_to_set(text))
-
-    return aid_set
-
-
-def main():
-    album_id_set = get_id_set('JM_ALBUM_IDS', jm_albums)
-    photo_id_set = get_id_set('JM_PHOTO_IDS', jm_photos)
-
-    helper = JmcomicUI()
-    helper.album_id_list = list(album_id_set)
-    helper.photo_id_list = list(photo_id_set)
-
-    option = get_option()
-    helper.run(option)
+清单 get_option（）
+“帮助标题”***
     option.call_all_plugin('after_download')
 
 
-def get_option():
-    # 读取 option 配置文件
-    option = create_option(os.path.abspath(os.path.join(__file__, '../../assets/option/option_workflow_download.yml')))
+'：Img 2 pdfPlugin.[{PDF_OPTION=YoubYoublevalue=oskwargs'
+'Img 2 pdfPlugin。You）PDF_NAME_RULE='
+after_PDF'after_photo'主要的 get_ID_set'JM_ALBUM_IDS'ALBUM_ID_set='if PDF_OPTION='mayou You walse'after_PDF'after_ID_photo'. dir_RULE. base_dir++/PDF\\\\\\\\\\\\\\\'if\\\\\\\\\\\get_ID_set[JM]'：Img 2 pdfPlugin.[{PDF_OPTION=YoubYoublevalue=oskwargs'
 
-    # 支持工作流覆盖配置文件的配置
-    cover_option_config(option)
+加入
+cover_option_config（#支持工作流覆盖配置文件的配置）
 
-    # 把请求错误的html下载到文件，方便GitHub Actions下载查看日志
+#把请求错误的 html，你喜欢
     log_before_raise()
 
-    return option
+退货选择
 
 
 def cover_option_config(option: JmOption):
-    dir_rule = env('DIR_RULE', None)
-    if dir_rule is not None:
-        the_old = option.dir_rule
-        the_new = DirRule(dir_rule, base_dir=the_old.base_dir)
-        option.dir_rule = the_new
+dir_rule = env('DIR_RULE', None)
+如果 dir_rule you No：
+the_old = option.dir_rule
+the_new = DirRule(dir_rule, base_dir=the_old.base_dir)
+option.dir_rule = the_new
 
-    impl = env('CLIENT_IMPL', None)
-    if impl is not None:
-        option.client.impl = impl
+impl = env('CLIENT_IMPL', None)
+如果吸引你：
+option.client.impl = impl
 
-    suffix = env('IMAGE_SUFFIX', None)
-    if suffix is not None:
-        option.download.image.suffix = fix_suffix(suffix)
+suffix = env('IMAGE_SUFFIX', None)
+如果后缀不是 None：
+suffix=fix_suffix（后缀）
 
-    pdf_option = env('PDF_OPTION', None)
-    if pdf_option and pdf_option != '否':
-        call_when = 'after_album' if pdf_option == '是 | 本子维度合并pdf' else 'after_photo'
+PDF_OPTION=env（'PDF_OPTION'，无）
+如果 pdf_option pdf_option!='你：
+call_when='after_album'if pdf_option='是|you you you you you you walse'pdf'after_photo'
         
-        pdf_name_rule = env('PDF_NAME_RULE', None)
-        if isinstance(pdf_name_rule, str):
-            pdf_name_rule = pdf_name_rule.strip()
+PDF_NAME_RULE=env（'PDF_NAME_RULE'，无）
+if isinstance(pdf_name_rule, str):
+pdf_name_rule = pdf_name_rule.strip()
             
-        if not pdf_name_rule:
-            pdf_name_rule = '[JM{Aid}] {Atitle}' if call_when == 'after_album' else '[JM{Aid}] 第{Pindex}章-JM{Pid}-{Ptitle}'
+如果不是 pdf_name_rule：
+pdf_name_rule='[JM{Aid}]{Atitle}'if call_when='after_album'else'[JM{Aid}]第{Pindex}-JM{Pid}-{Ptitle}'
             
-        plugin = [{
-            'plugin': Img2pdfPlugin.plugin_key,
-            'kwargs': {
-                'pdf_dir': option.dir_rule.base_dir + '/pdf/',
-                'filename_rule': pdf_name_rule,
+plugin = [{
+'plugin': Img2pdfPlugin.plugin_key,
+'kwargs': {
+'pdf_dir': option.dir_rule.base_dir + '/pdf/',
+'filename_rule': pdf_name_rule,
                 'delete_original_file': True,
             }
         }]
